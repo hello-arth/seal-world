@@ -116,7 +116,16 @@ body {
 }
 
 .gallery__img-wrapper {
-  display: inline-block;
+  /* Por que isso precisa ser inline-block ?
+
+  A resposta é a seguinte: O gallery__img-wrapper é uma span, o que significa que este elemento não cresce verticalmente. Então, 
+  se o display não for inline-block, não tem como usar o ::after da melhor maneira neste código, porque vamos posicionar os pontinhos vermelhos no topo do card.
+  Então, gallery__img-wrapper precisa ser um inline-block pra poder crescer também verticalmente e herdar o tamanho automático do conteúdo dentro dele, 
+  ainda que o conteúdo dentro dele tenha position absolute. Mas é bom levar em consideração que para elementos absolutos serem posicionados no limite do elemento pai, 
+  esse elemento pai precisa ter uma position diferente de static. Neste exemplo aqui, gallery__img-wrapper tem um position relative, 
+  para que tanto a imagem quanto o pseudo ::after possam ser relativos a este elemento */
+
+  display: inline-block; 
   position: relative
 }
 
