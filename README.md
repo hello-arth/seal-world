@@ -10,14 +10,15 @@
 
 ## Como rodar o projeto
 
-1. Clone o repositório:
+#### 1. Clone o repositório:
 ```bash
 git clone git@github.com:hello-arth/seal-world.git
 ```
-2. Navegue até a pasta do projeto:
-   cd seal-world
-
-3. Abra o arquivo `index.html` em seu navegador para visualizar a página.
+#### 2. Navegue até a pasta do projeto:
+```bash
+cd seal-world
+```
+#### 3. Abra o arquivo `index.html` em seu navegador para visualizar a página.
 
 ## Stack utilizada
 
