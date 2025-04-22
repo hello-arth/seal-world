@@ -3,10 +3,7 @@
 "Seal World" é um site simples em HTML e CSS dedicado ao mundo das focas. A página apresenta informações sobre o comportamento das focas, como suas habilidades de natação, locais favoritos e curiosidades interessantes sobre elas.
 
 ## Notas sobre o Projeto
-
-- Este projeto **não é responsivo** para dispositivos móveis no momento.
-- Não há media queries implementadas, o que pode afetar a experiência do usuário em telas menores.
-- Implementações futuras podem incluir ajustes para garantir que o site seja acessível e bem apresentado em todos os dispositivos.
+- Layout responsivo, otimizado para diferentes dispositivos, proporcionando uma experiência de navegação em telas de variados tamanhos.
 
 ## Como rodar o projeto
 
