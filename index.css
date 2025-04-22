@@ -65,7 +65,7 @@ a:hover {
 
 .hero__title {
   font-weight: 300;
-  font-size: 2.5rem
+  font-size: 2rem
 }
 
 .hero__text {
@@ -191,6 +191,10 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  
   .section__title {
     font-size: 2rem;
   }
