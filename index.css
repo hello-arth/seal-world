@@ -2,8 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  user-select: none;
 }
 
 img {
@@ -11,14 +9,32 @@ img {
 }
 
 :root {
-  --color-background: #030207;
   --color-white: #fff;
-  --color-blue: #1474b4;
+  --color-light: #e0e0e0;
+  --color-black: #000;
+  --color-dark: #030207;
+  --color-blue: #00AEC7;
+
+  --color-background: var(--color-dark);
+  --color-foreground: var(--color-white);
+  --color-links: var(--color-blue)
 }
 
 body {
   background-color: var(--color-background);
-  color: var(--color-white)
+  color: var(--color-white);
+  font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-links)
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .hero, .section {
@@ -29,6 +45,7 @@ body {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-background));
   position: relative;
+  display: grid;
 }
 
 .hero__background {
@@ -42,23 +59,26 @@ body {
 
 .hero__foreground {
   text-align: center;
-  padding-top: 35vh;
+  place-self: center;
+  padding: 0 1.5rem;
 }
 
 .hero__title {
   font-weight: 300;
-  font-size: 5rem
+  font-size: 2rem
 }
 
 .hero__text {
-  margin-top: 2rem;
+  font-size: .75rem;
+  margin-top: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: .45rem;
-  font-size: 1.05rem;
+  letter-spacing: .25rem;
 }
 
 .section {
-  padding: 0 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
   overflow: hidden;
   text-align: center;
 }
@@ -69,12 +89,11 @@ body {
 
 .section__title {
   font-weight: 300;
-  font-size: 2rem;
-  margin: 3rem 0;
+  margin-bottom: 1.5rem
 }
 
 .section__text {
-  margin: 3rem 0 0;
+  margin-top: 1rem;
 }
 
 .section__img, .section__img-inline, .gallery__img {
@@ -91,40 +110,52 @@ body {
 }
 
 .section__img-inline {
-  width: 20rem;
+  width: 100%;
   height: 25rem;
   border-radius: 1em;
   border-top-left-radius: 2.5rem;
   border-bottom-right-radius: 2.5rem;
-  float: left;
-  margin-right: 3rem;
-  margin-bottom: 1rem;
+  object-fit: cover;
 }
 
 .section__text-inline {
-  margin-top: 6rem;
-  margin-bottom: 1rem;
-  text-align: left
+  text-align: center
 }
 
 .section__text-inline > p {
-  margin-top: 1.5rem
+  margin-top: 1rem
 }
 
 #hangouts img {
   object-position: center;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem
+}
+
+.gallery__img {
+  width: 100%;
+  max-width: 12rem;
+  max-height: auto;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
 .gallery__img-wrapper {
   /* Por que isso precisa ser inline-block ?
-
-  A resposta é a seguinte: O gallery__img-wrapper é uma span, o que significa que este elemento não cresce verticalmente. Então, 
+  O gallery__img-wrapper é uma span, o que significa que este elemento não cresce verticalmente. Então, 
   se o display não for inline-block, não tem como usar o ::after da melhor maneira neste código, porque vamos posicionar os pontinhos vermelhos no topo do card.
   Então, gallery__img-wrapper precisa ser um inline-block pra poder crescer também verticalmente e herdar o tamanho automático do conteúdo dentro dele, 
   ainda que o conteúdo dentro dele tenha position absolute. Mas é bom levar em consideração que para elementos absolutos serem posicionados no limite do elemento pai, 
   esse elemento pai precisa ter uma position diferente de static. Neste exemplo aqui, gallery__img-wrapper tem um position relative, 
   para que tanto a imagem quanto o pseudo ::after possam ser relativos a este elemento */
-
   display: inline-block; 
   position: relative
 }
@@ -146,22 +177,12 @@ body {
   left: 1rem;
 }
 
-
-.gallery__img {
-  width: 12rem;
-  height: 12rem;
-  object-fit: cover;
-  border-radius: 1rem;
-}
-
 .gallery__img-wrapper > .gallery__img {
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
 }
 
 .gallery__img-wrapper:nth-child(even) > .gallery__img {
-  position: relative;
-  top: 1rem;
-  transform: rotate(2deg);
+  transform: rotate(1deg);
 }
 
 .gallery__img-wrapper + .gallery__img-wrapper {
@@ -169,6 +190,37 @@ body {
 }
 
 footer {
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 2.5rem
+  }
+
+  .section__title {
+    font-size: 2rem;
+  }
+  
+  .hero__text {
+    font-size: 1rem;
+    letter-spacing: .4rem;
+  }
+
+  .section {
+    padding: 1.5rem 3rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .section__img-inline {
+    width: 20rem;
+    float: left; 
+    margin-right: 2rem;
+  }
+
+  .section__text-inline {
+    text-align: left
+  }
 }
