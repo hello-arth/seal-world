@@ -30,12 +30,8 @@ O projeto está hospedado e pode ser acessado no seguinte link:
 
 ## 📸 Capturas de Tela
 
-![Get Ready to Seal-abrate!](screenshots/1.png)
-![Exploring the World of Seals](screenshots/2.png)
-![Style and Moves](screenshots/3.png)
-![Seal Hangouts](screenshots/4.png)
-![Meet the Seal Crew](screenshots/5.png)
-![Cool Facts About Seals](screenshots/6.png)
+
+![Seal World](https://github.com/user-attachments/assets/c1e35f2f-a0c5-4687-964a-144868814373)
 
 
 ## Licença
