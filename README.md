@@ -22,17 +22,17 @@ cd seal-world
 - HTML
 - CSS
 
-## 📌 Veja o projeto online
-
-O projeto está hospedado e pode ser acessado no seguinte link:
-
-🔗 [Seal World](https://seal-world-alpha.vercel.app/)
-
 ## 📸 Capturas de Tela
 
 
 ![Seal World](https://github.com/user-attachments/assets/c1e35f2f-a0c5-4687-964a-144868814373)
 
+
+## 📌 Veja o projeto online
+
+O projeto está hospedado e pode ser acessado no seguinte link:
+
+🔗 [Seal World](https://seal-world-alpha.vercel.app/)
 
 ## Licença
 
